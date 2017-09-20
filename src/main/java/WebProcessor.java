@@ -77,11 +77,14 @@ public class WebProcessor {
     public static String wordWithoutExtras(final String input) {
         String newString = "";
         if (input.indexOf(",") >= 0) {
-            newString = input.substring(0, input.indexOf(","));
+            newString = input.substring(0, input.indexOf(","))
+                    + input.substring(input.indexOf(","), input.length());
         } else if (input.indexOf("!") >= 0) {
-            newString = input.substring(0, input.indexOf("!"));
+            newString = input.substring(0, input.indexOf("!"))
+                    + input.substring(input.indexOf("!"), input.length());
         } else if (input.indexOf(".") >= 0) {
-            newString = input.substring(0, input.indexOf("."));
+            newString = input.substring(0, input.indexOf("."))
+                    + input.substring(input.indexOf("."), input.length());
         } else {
             newString = input;
         }
